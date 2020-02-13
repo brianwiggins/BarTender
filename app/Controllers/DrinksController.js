@@ -30,5 +30,12 @@ export default class DrinksController {
 getDrinkById(id){
 DrinksService.getDrinkbyId(id);
 }
+
+addFav(){
+DrinksService.addFav();
+}
   
+rmFav(){
+DrinksService.rmFav();
+}
 }

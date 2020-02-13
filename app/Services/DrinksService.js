@@ -8,7 +8,7 @@ let _drinkApi = axios.create({
 });
 class DrinksService {
   getNewDrink(){
-    let res = _drinkApi.get("").then(d=>{
+    let res = _drinkApi.get("").then((d)=>{
      let tempDrink= d.data.drinks[0];
       if(tempDrink.strIngredient6==null){
       res = new Drink(tempDrink);//create new Drink object if it's simple enough
