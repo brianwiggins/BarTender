@@ -4,7 +4,7 @@ import Drink from "../Models/Drink.js";
 //@ts-ignore
 let _drinkApi = axios.create({
   baseURL: "https://www.thecocktaildb.com/api/json/v1/1/random.php",
-  timeout:3000
+  timeout:5000
 });
 class DrinksService {
   getNewDrink(){
