@@ -1,7 +1,8 @@
 import DrinksController from "./Controllers/DrinksController.js";
 
 class App {
-  drinksController = new DrinksController();
-}
+constructor(){
+  this.drinksController=new DrinksController();
+}}
 
 window["app"] = new App();
