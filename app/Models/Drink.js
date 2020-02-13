@@ -1,6 +1,7 @@
 
-export default class Value {
+export default class Drink {
     constructor(data) {
+        debugger
         this.id = data.idDrink;
         this.name = data.strDrink;
         this.ingredients=[];
@@ -10,10 +11,13 @@ export default class Value {
         this.favorite=false;
     }
 
+    setFavorite(bool){
+        this.favorite=bool;
+    }
     get Template() {
         let template =/*html*/
         `
-        <div class="card" style="width:50vw;">
+        <div class="card bg-secondary text-white" style="width:50vw;">
         <div class="card-body">
         <h5 class="card-title">${this.name}</h5>
         <img src="${this.thumb}" class="card-img" alt="No picture available">
@@ -39,14 +43,14 @@ export default class Value {
                 }
             }
         }
-        let niceIngredients =combine.join();
+        let niceIngredients =combine.join(", ");
         return niceIngredients;
     }
 
     getFavButton(){
         if(this.favorite){
-            return`<button class="btn btn-warning" onclick="app.drinkController.rmFav()">Remove Favorites</button>`;
+            return`<button class="btn btn-warning" onclick="app.drinksController.rmFav(${this.id})">Remove Favorites</button>`;
         }
-        return`<button class="btn btn-success" onclick="app.drinkController.addFav()">Add Drink to Favorites</button>`;
+        return`<button class="btn btn-success" onclick="app.drinksController.addFav(${this.id})">Add Drink to Favorites</button>`;
     }
 }

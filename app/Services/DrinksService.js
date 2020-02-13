@@ -53,18 +53,22 @@ class DrinksService {
   
   }
     
-  rmFav(){
+  rmFav(id){
     //remove from list of favorites, look into server options instead of local storage
+    
     let res = prompt("Are you sure you'd like to remove this drink from your favorites?")
     if(res){
-    store.State.myDrinks.filter(d=>d.id==store.State.activeDrink[0].id)
+    store.State.myDrinks.filter(store.State.getDrinkwithId(id));
     store.commit("myDrinks",store.State.myDrinks);
   }
   }
   addFav(id){
-
-    //add to list of favorites, look into server options instead of local storage
+    debugger
+    store.State.activeDrink.setFavorite(true)
+    store.State.myDrinks.push(store.State.activeDrink)
+    store.commit("myDrinks", store.State.myDrinks)
   }
+
 }
 
 const service = new DrinksService();

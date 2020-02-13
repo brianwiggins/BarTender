@@ -31,11 +31,11 @@ getDrinkById(id){
 DrinksService.getDrinkbyId(id);
 }
 
-addFav(){
-DrinksService.addFav();
+addFav(id){
+DrinksService.addFav(id);
 }
   
-rmFav(){
-DrinksService.rmFav();
+rmFav(id){
+DrinksService.rmFav(id);
 }
 }
